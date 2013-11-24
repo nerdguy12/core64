@@ -2,6 +2,7 @@
 // This file contains the buffer and the keyboard map
 // Only US Keyboards!
 // I don't plan to support other keyboards :P
+// Cause they are tough to make. (maybe?)
 // From bkerndev.
 unsigned char KEYBOARD_MAP[128] =
 {
