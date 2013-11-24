@@ -1,0 +1,71 @@
+// Core64 - A 64bit Kernel written in C
+// Can be used as an example of how to NOT
+// write a kernel.
+// VGA/SCREEN.H ---> Screen functions like os_move_cursor,os_print_string blah
+// blah blah
+// os_print_string
+// IN : char to print, line to display
+// OUT : Nothing
+unsigned int os_print_string(unsigned char *string,int line)
+{
+	char *vidmem = (char *) 0xb8000;
+	unsigned int i= 0;
+
+	i=(line*80*2);
+
+	while(*string!=0) // 24h
+	{
+		vidmem[i]= *string;
+		*string++;
+		i++;
+		vidmem[i]= 0x2F;
+		i++;
+	};
+
+	return(1);
+};
+
+// os_clear_screen
+// Clears the whole screen with white on black color.
+void os_clear_screen() 
+{
+	char *VGA_MEM = (char *) 0xb8000;
+	unsigned int i = 0;
+	while(i < (80*25*2))
+	{
+		VGA_MEM[i]=' ';
+		i++;
+		VGA_MEM[i]=WHITE_ON_GREEN;
+		i++;
+	};
+};
+
+// os_move_cursor 
+// Updates the hardware cursor
+// IN : y Position, x Position
+void os_move_cursor(int y, int x)
+ {
+    unsigned short position=(y*80) + x;
+    // cursor LOW port to vga INDEX register
+    outb(0x3D4, 0x0F);
+    outb(0x3D5, (unsigned char)(position&0xFF));
+    // cursor HIGH port to vga INDEX register
+    outb(0x3D4, 0x0E);
+    outb(0x3D5, (unsigned char )((position>>8)&0xFF));
+ };
+// Lol!
+// os_put_char
+// IN : unsgined char to print
+// OUT : Nothing
+unsigned int putch(unsigned char string,int y)
+{
+	
+   	char *vgamem = (char *) 0xb8000;
+    	unsigned int i2= 0;
+	i2=(y*80*2);
+	vgamem[i2]= string;
+	string++;
+	i2++;
+	vgamem[i2]= 0x2F;
+	i2++;
+};
