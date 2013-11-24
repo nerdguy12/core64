@@ -1,3 +1,4 @@
+// From James M Kernel Development Tutorials.
 #include "../types.h"
 void outb(u16int port, u8int value)
 {
