@@ -1,3 +1,4 @@
+// From Brans Kernel Development Tutorials
 unsigned char inportb (unsigned short _port)
 {
     unsigned char rv;
