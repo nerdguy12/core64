@@ -1,4 +1,4 @@
-// Core64 - A 64bit Kernel written in C
+// Core64 - A 64bit Kernel written in C by nerdguy
 // Can be used as an example of how to NOT
 // write a kernel.
 // VGA/SCREEN.H ---> Screen functions like os_move_cursor,os_print_string blah
