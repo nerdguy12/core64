@@ -1,6 +1,6 @@
 // core64/kernel/kernel.c ---> Kernel
-// Some shit
-// Very much shit
+// Some stuff
+// Very much useless
 // Useless!
 // Core64 - A 64-bit Kernel written in C
 // Doesn't compile for Windows Fanboys
@@ -9,7 +9,7 @@
 // Also kills PE Fanboys
 // PE = Puke Executable
 // Believe me!
-// Death to Windows!
+// Windows = Work Is Never Done On Windows Systems
 // End to hex codes
 #define WHITE_ON_GREEN 0x2F
 #include "stdio.h" // Some functions that need to be used.
