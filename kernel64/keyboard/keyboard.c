@@ -2,6 +2,7 @@
 // Very simple, not much except handling certain stuff.
 // This will be called after the kernel is initialized from Pure64.
 // Some defines
+// Make Life Easier!
 #define KEY_RELEASE 0x80
 // KEYBOARD_HANDLER > Handles the Keyboard.
 // IN : Nothing (for now)
